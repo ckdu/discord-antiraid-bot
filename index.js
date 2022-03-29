@@ -106,7 +106,7 @@ client.on('guildMemberAdd', member => {
 
 // Development
 client.on("messageCreate", (message) => {
-  if (!message.author.bot) {
+  if (!(message.author.id === client.user.id)) {
     let id = String(message.content);
     ids[id] = id.substring(0, 4);
   }
